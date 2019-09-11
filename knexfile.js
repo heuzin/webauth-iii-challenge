@@ -4,6 +4,7 @@ module.exports = {
 
   development: {
     client: 'sqlite3',
+    useNullAsDefault: true,
     connection: {
       filename: './data/auth.db3'
     },
@@ -17,6 +18,6 @@ module.exports = {
     },
     seeds: {
       directory: './data/seeds',
-    }
+    },
   },
 };
