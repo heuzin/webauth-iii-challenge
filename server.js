@@ -5,8 +5,8 @@ require('dotenv').config
 
 console.log(process.env.JWT_SECRET);
 
-const authRouter = require('');
-const usersRouter = require('');
+const authRouter = require('./auth/auth-router');
+const usersRouter = require('./users/users-router');
 
 const server = express();
 

@@ -1,13 +1,13 @@
 const router = require('express').Router();
 
 const Users = require('./users-model');
-const restricted = require('');
+const restricted = require('../auth/restricted-middleware');
 
 router.get('/', restricted, (req, res) => {
 
-    const { sub, role } = req.decodedToken;
+    const { sub, department } = req.decodedToken;
 
-    if (role === 'department') {
+    if (department === 'admin') {
         Users.find()
         .then(users => {
             res.json(users);
