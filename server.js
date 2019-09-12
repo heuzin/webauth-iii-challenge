@@ -1,24 +1,19 @@
 const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
-require('dotenv').config
-
-console.log(process.env.JWT_SECRET);
+require('dotenv').config()
 
 const authRouter = require('./auth/auth-router');
 const usersRouter = require('./users/users-router');
 
 const server = express();
 
-server.use(helmet);
+server.use(helmet());
 server.use(express.json());
 server.use(cors());
 
 server.use('/api/auth', authRouter);
 server.use('/api/users', usersRouter);
-
-server.get('/', (req, res) => {
-    res.send('Its online')
-});
+server.use(express.static(__dirname + '/../client/build/'));
 
 module.exports = server;
