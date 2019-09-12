@@ -28,6 +28,7 @@
     "knex": "^0.19.4",
     "node": "^12.10.0",
     "node.js": "0.0.0",
+    "path": "^0.12.7",
     "sqlite3": "^4.1.0"
   },
   "devDependencies": {
